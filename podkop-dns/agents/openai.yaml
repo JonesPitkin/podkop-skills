@@ -1,0 +1,4 @@
+interface:
+  display_name: "Podkop DNS"
+  short_description: "Настройка DNS, FakeIP и dnsmasq в Podkop"
+  default_prompt: "Use $podkop-dns to configure and verify DNS and FakeIP for Podkop."

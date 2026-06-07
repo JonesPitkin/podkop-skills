@@ -1,0 +1,4 @@
+interface:
+  display_name: "Podkop Routing"
+  short_description: "Маршрутизация Podkop через прокси и VPN"
+  default_prompt: "Use $podkop-routing to design and configure Podkop routing sections for proxy or VPN traffic."

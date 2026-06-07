@@ -1,0 +1,4 @@
+interface:
+  display_name: "Podkop Troubleshooting"
+  short_description: "Устранение типовых сбоев Podkop"
+  default_prompt: "Use $podkop-troubleshooting to isolate and fix a Podkop failure step by step."

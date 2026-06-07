@@ -1,0 +1,4 @@
+interface:
+  display_name: "Podkop Install"
+  short_description: "Установка и обновление Podkop на OpenWrt"
+  default_prompt: "Use $podkop-install to install or safely update Podkop on an OpenWrt router."

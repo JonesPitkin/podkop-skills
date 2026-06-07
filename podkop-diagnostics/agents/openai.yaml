@@ -1,0 +1,4 @@
+interface:
+  display_name: "Podkop Diagnostics"
+  short_description: "Системная диагностика Podkop и sing-box"
+  default_prompt: "Use $podkop-diagnostics to collect and interpret Podkop diagnostics on OpenWrt."
