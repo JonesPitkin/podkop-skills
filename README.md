@@ -1,40 +1,16 @@
-# ⚠️ ВАЖНО / IMPORTANT
+# 🔴 ВАЖНО / IMPORTANT
 
-🔴 Для корректной работы данного репозитория необходимо использовать аудит-скилл:
-
-`nidox-vpn-detection-defense-skill`
-
-Этот репозиторий не предназначен для самостоятельного использования без проверки через аудит-скилл.
-
-Аудит обязателен для оценки:
-
-* VPN-детекта
-* VPN-фингерпринтов
-* DNS-утечек
-* Cloudflare/CDN-схем
-* VLESS Reality
-* маршрутизации
-* рисков блокировок
-* ложноположительных сценариев
-
----
-
-🔴 For correct operation of this repository you must use:
-
-`nidox-vpn-detection-defense-skill`
-
-This repository is not intended to be used standalone without audit verification.
-
-The audit skill is required for:
-
-* VPN detection analysis
-* VPN fingerprint analysis
-* DNS leak assessment
-* Cloudflare/CDN architectures
-* VLESS Reality deployments
-* routing validation
-* blocking risk assessment
-* false-positive evaluation
+> **🔴 ВАЖНО**  
+> Для корректной работы этого skill рекомендуется использовать аудит-модуль:  
+> [`nidox-vpn-detection-defense-skill`](https://github.com/JonesPitkin/nidox-vpn-detection-defense-skill)
+>
+> Без него проверка конфигураций, маршрутизации, CDN, DNS и VPN-детекта может быть неполной.
+>
+> **🔴 IMPORTANT**  
+> For proper operation of this skill it is strongly recommended to use:  
+> [`nidox-vpn-detection-defense-skill`](https://github.com/JonesPitkin/nidox-vpn-detection-defense-skill)
+>
+> Without it, validation of VPN configurations, routing, CDN, DNS and detection-resistance settings may be incomplete.
 
 # Podkop Skills
 
