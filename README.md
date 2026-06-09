@@ -1,22 +1,12 @@
-# 🔴 ВАЖНО / IMPORTANT
+# podkop-skills
 
-> **🔴 ВАЖНО**  
-> Для корректной работы этого skill рекомендуется использовать аудит-модуль:  
-> [`nidox-vpn-detection-defense-skill`](https://github.com/JonesPitkin/nidox-vpn-detection-defense-skill)
->
-> Без него проверка конфигураций, маршрутизации, CDN, DNS и VPN-детекта может быть неполной.
->
-> **🔴 IMPORTANT**  
-> For proper operation of this skill it is strongly recommended to use:  
-> [`nidox-vpn-detection-defense-skill`](https://github.com/JonesPitkin/nidox-vpn-detection-defense-skill)
->
-> Without it, validation of VPN configurations, routing, CDN, DNS and detection-resistance settings may be incomplete.
+`podkop-skills` — самостоятельный репозиторий Codex skills для установки, настройки, диагностики и сопровождения `Podkop` на OpenWrt.
 
-# Podkop Skills
+Этот репозиторий может использоваться отдельно и не требует обязательного аудита через `nidox-vpn-detection-defense-skill`, если работает сам по себе.
 
-Набор Skills для установки, настройки и сопровождения Podkop на OpenWrt.
+## Статус репозитория
 
-Материалы основаны на [Podkop Wiki](https://github.com/itdoginfo/podkop-wiki) на коммите `34872e963af4c99116665a202ea83616fd6017ad` от 29 мая 2026 года.
+Репозиторий остаётся автономным набором Podkop skills. Обязательный аудит через `nidox-vpn-detection-defense-skill` нужен только тогда, когда конкретный skill копируется, включается или используется внутри `nidox-vpn-skills`, где действует отдельная политика аудита.
 
 ## Навыки
 
@@ -32,9 +22,9 @@
 
 Три смежных навыка намеренно не дублируют друг друга:
 
-1. `podkop-dns` создает или изменяет DNS-конфигурацию.
-2. `podkop-diagnostics` только собирает данные и формирует отчет.
-3. `podkop-troubleshooting` применяет исправление к уже подтвержденной причине.
+1. `podkop-dns` создаёт или изменяет DNS-конфигурацию.
+2. `podkop-diagnostics` только собирает данные и формирует отчёт.
+3. `podkop-troubleshooting` применяет исправление к уже подтверждённой причине.
 
 ## Структура
 
@@ -43,6 +33,10 @@
 - `SKILL.md` с trigger description и основным workflow;
 - `agents/openai.yaml` с UI-метаданными;
 - `references/` с подробными процедурами и сценариями.
+
+## Связь с nidox-vpn-skills
+
+Если материалы из `podkop-skills` используются внутри `nidox-vpn-skills`, они автоматически подпадают под правила обязательного аудита мета-репозитория. Вне этого сценария репозиторий остаётся самостоятельным и может использоваться без жёсткой аудиторской зависимости.
 
 ## Установка
 
