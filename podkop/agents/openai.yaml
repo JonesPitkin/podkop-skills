@@ -1,0 +1,4 @@
+name: podkop
+description: Repository entry skill for routing Podkop tasks to the correct specialist module.
+metadata:
+  default_prompt: "Use $podkop to decide which Podkop specialist skill should handle the request."

@@ -1,62 +1,75 @@
 # podkop-skills
 
-`podkop-skills` — самостоятельный репозиторий Codex skills для установки, настройки, диагностики и сопровождения `Podkop` на OpenWrt.
+Comprehensive AI Skill Repository for `Podkop`.
 
-Этот репозиторий может использоваться отдельно и не требует обязательного аудита через `nidox-vpn-detection-defense-skill`, если работает сам по себе.
+Official-source-oriented skill collection for `Podkop` on OpenWrt: installation, DNS and FakeIP, routing, diagnostics, and minimal-change troubleshooting.
 
-## Статус репозитория
+## Skill Tree
 
-Репозиторий остаётся автономным набором Podkop skills. Обязательный аудит через `nidox-vpn-detection-defense-skill` нужен только тогда, когда конкретный skill копируется, включается или используется внутри `nidox-vpn-skills`, где действует отдельная политика аудита.
+- [`podkop`](podkop/SKILL.md)
+- [`podkop-install`](podkop-install/SKILL.md)
+- [`podkop-dns`](podkop-dns/SKILL.md)
+- [`podkop-routing`](podkop-routing/SKILL.md)
+- [`podkop-diagnostics`](podkop-diagnostics/SKILL.md)
+- [`podkop-troubleshooting`](podkop-troubleshooting/SKILL.md)
 
-## Навыки
+## Dependency Map
 
-| Skill | Назначение |
-|---|---|
-| `podkop-install` | Установка, обновление, удаление и восстановление Podkop |
-| `podkop-dns` | Проектирование и настройка DNS, FakeIP, dnsmasq и AdGuard Home |
-| `podkop-routing` | Секции, списки, VLESS/Reality, URLTest и VPN-маршрутизация |
-| `podkop-diagnostics` | Read-only сбор фактов и локализация первого сломанного слоя |
-| `podkop-troubleshooting` | Минимальные исправления после подтвержденной диагностики |
+- `podkop` is the repository entrypoint for request classification.
+- `podkop-install` owns package lifecycle and platform fit.
+- `podkop-dns` owns dnsmasq, sing-box DNS, FakeIP, and client DNS behavior.
+- `podkop-routing` owns proxy/VPN sections, outbounds, selectors, and traffic policy.
+- `podkop-diagnostics` is read-only and identifies the first broken layer.
+- `podkop-troubleshooting` applies the smallest safe fix after confirmed diagnosis.
 
-## Разделение ответственности
+## Quick Start
 
-Три смежных навыка намеренно не дублируют друг друга:
+1. Start with [`podkop/SKILL.md`](podkop/SKILL.md) for broad tasks.
+2. Use `podkop-install` before changing packages or OpenWrt integration.
+3. Use `podkop-diagnostics` before making assumptions about a broken router.
+4. Use `podkop-troubleshooting` only after the failing layer is proven.
 
-1. `podkop-dns` создаёт или изменяет DNS-конфигурацию.
-2. `podkop-diagnostics` только собирает данные и формирует отчёт.
-3. `podkop-troubleshooting` применяет исправление к уже подтверждённой причине.
+## Repository Structure
 
-## Структура
-
-Каждый каталог навыка содержит:
-
-- `SKILL.md` с trigger description и основным workflow;
-- `agents/openai.yaml` с UI-метаданными;
-- `references/` с подробными процедурами и сценариями.
-
-## Связь с nidox-vpn-skills
-
-Если материалы из `podkop-skills` используются внутри `nidox-vpn-skills`, они автоматически подпадают под правила обязательного аудита мета-репозитория. Вне этого сценария репозиторий остаётся самостоятельным и может использоваться без жёсткой аудиторской зависимости.
-
-## Установка
-
-Скопировать нужные каталоги в директорию Skills Codex:
-
-```sh
-cp -R podkop-* "${CODEX_HOME:-$HOME/.codex}/skills/"
+```text
+podkop-skills/
+├── README.md
+├── LICENSE
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── SKILL_INDEX.md
+├── VERSION_MATRIX.md
+├── MIGRATION_GUIDE.md
+├── GITHUB_REPOSITORY.md
+├── RELEASE_v1.0.0.md
+├── podkop/
+├── podkop-install/
+├── podkop-dns/
+├── podkop-routing/
+├── podkop-diagnostics/
+└── podkop-troubleshooting/
 ```
 
-Навыки можно устанавливать независимо, но полный набор обеспечивает переходы между настройкой, диагностикой и исправлением.
+## Official Sources
 
-## Проверка
+- official `Podkop` repository
+- official `Podkop` wiki
+- official OpenWrt package and platform documentation
 
-```sh
-python3 -m pip install pyyaml
-python3 scripts/validate_skills.py
-```
+See [`podkop/references/official-links.md`](podkop/references/official-links.md).
 
-GitHub Actions выполняет ту же проверку для pull request и push.
+## Version Policy
 
-## Безопасность
+Treat `Podkop`, `sing-box`, `dnsmasq`, OpenWrt package flows, and LuCI behavior as changeable across releases. Validate current upstream state before production mutations.
 
-Не публикуйте VLESS URL, UUID, пароли, токены, Reality keys, short ID и конфигурации с секретами. Примеры используют только фиктивные или скрытые значения.
+## License
+
+Released under the MIT License. See [`LICENSE`](LICENSE).
+
+## Contribution Guide
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## Changelog
+
+Repository-level release notes are tracked in [`CHANGELOG.md`](CHANGELOG.md).
