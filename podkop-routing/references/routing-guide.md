@@ -38,7 +38,7 @@ config section 'wg'
 ```json
 {
   "type": "vless",
-  "server": "proxy.example.com",
+  "server": "files.example.com",
   "server_port": 443,
   "uuid": "REDACTED-UUID",
   "flow": "xtls-rprx-vision",
@@ -146,4 +146,3 @@ Podkop Wiki, коммит `34872e963af4c99116665a202ea83616fd6017ad`:
 - https://github.com/itdoginfo/podkop-wiki/tree/main/content/docs/tunnels
 - https://github.com/itdoginfo/podkop-wiki/tree/main/content/docs/workvpn
 - https://github.com/itdoginfo/podkop-wiki/tree/main/content/docs/yacd
-

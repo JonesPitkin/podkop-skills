@@ -32,6 +32,7 @@ description: "Пошагово устранять подтвержденные �
 - Проверять время, DNS сервера, порт, UUID, flow, SNI, fingerprint, public key и short ID.
 - Отличать импорт Podkop, handshake sing-box и недоступность сервера.
 - Сравнивать с тестовой ссылкой и при необходимости использовать outbound JSON.
+- Не заменять рабочие cover hostnames на шаблонные `vpn.*`, `proxy.*`, `ws.*`, `panel.*`, `admin.*` или transport paths вроде `/ws`, `/vpn`, `/proxy`, `/vless`, `/xray` как "быстрый фикс".
 
 ## Завершение
 

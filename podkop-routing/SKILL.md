@@ -27,6 +27,8 @@ description: Проектировать и настраивать маршрут
 - Предпочитать штатную `vless://` ссылку, если Podkop ее принимает.
 - Иначе использовать sing-box outbound JSON.
 - Проверять server, port, UUID, flow, TLS `server_name`, fingerprint, Reality `public_key` и `short_id`.
+- Для публичных hostnames не генерировать transport-labeled cover names вроде `vpn.*`, `proxy.*`, `ws.*`, `panel.*`, `admin.*` без явного предупреждения о риске.
+- Когда схема опирается на HTTP/CDN publication, предпочитать нейтральные hostname вроде `assets.*`, `static.*`, `media.*`, `content.*`, `files.*`.
 - Никогда не помещать Reality private key в клиентский outbound.
 - Отделять ошибку JSON от сетевой доступности сервера.
 
@@ -40,4 +42,3 @@ description: Проектировать и настраивать маршрут
 ## Подробности
 
 Открыть [references/routing-guide.md](references/routing-guide.md) для VLESS/Reality JSON, URLTest, списков, VPN и ошибок.
-
